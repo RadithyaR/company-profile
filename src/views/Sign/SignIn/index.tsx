@@ -1,59 +1,46 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { ToastContainer } from "react-toastify";
+import SignInForm from "./components/SignInForm";
+import SignInFormik from "./components/SignInFormik";
 
 const SignInView = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      {/* Card Container */}
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        {/* Card Header */}
-        <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
-          Sign In
-        </h2>
+    <div className="w-full h-screen bg-[url('/static/bg-sign.webp')] bg-cover bg-center">
+      <div className="absolute z-[1] w-full h-full bg-black opacity-25" />
+      <div className="w-full h-full flex items-center justify-center">
+        <div className="z-10 w-full max-w-[400px] bg-white rounded-lg shadow-lg p-6">
+          <div className="flex flex-col items-center justify-center">
+            <Link href="/">
+              <Image
+                src="/static/logo-only.png"
+                alt="Logo"
+                width={100}
+                height={100}
+                style={{ objectFit: "contain" }}
+                className="mb-4"
+              />
+            </Link>
 
-        {/* Form */}
-        <form className="space-y-4">
-          {/* Email Input */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Email
-            </label>
-            <input
-              type="email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Email"
-            />
+            <h1 className="text-2xl font-bold text-center mb-8 tracking-[0.5px]">
+              Sign In
+            </h1>
           </div>
+          <SignInFormik>
+            <SignInForm />
+          </SignInFormik>
 
-          {/* Password Input */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Password
-            </label>
-            <input
-              type="password"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Password"
-            />
-          </div>
-
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200"
-          >
-            Log In
-          </button>
-        </form>
-
-        {/* Footer */}
-        <div className="mt-4 text-center text-sm text-gray-600">
-          Don't have an account?
-          <Link href="/sign-up" className="text-blue-600 hover:underline ml-1">
-            Sign Up
-          </Link>
+          <p className="mt-5 text-sm text-center">
+            Belum punya akun{"? "}
+            <Link href="/sign-up" className="text-red-500">
+              Daftar
+            </Link>
+          </p>
         </div>
       </div>
+
+      <ToastContainer />
     </div>
   );
 };

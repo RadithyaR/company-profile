@@ -6,7 +6,7 @@ export const navs = [
   },
   {
     id: 1,
-    label: "About-Us",
+    label: "About Us",
     url: "/about-us",
   },
   {
@@ -16,7 +16,7 @@ export const navs = [
   },
   {
     id: 3,
-    label: "Our-Team",
+    label: "Our Team",
     url: "/our-teams",
   },
   {
