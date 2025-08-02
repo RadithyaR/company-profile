@@ -5,6 +5,7 @@ import BlogCard from "./blog-card";
 import axios from "axios";
 import { BlogFormikValues } from "./blog-create/type";
 import { userAuthStore } from "@/store/authStore";
+import Image from "next/image";
 
 const BlogView = () => {
   const { user } = userAuthStore();
@@ -26,7 +27,31 @@ const BlogView = () => {
     fetchBlogs();
   }, [fetchBlogs]);
   return (
-    <div className="w-full h-screen bg-[url('/static/bg-grafis.png')] bg-cover bg-center">
+    <div className="w-full min-h-screen  bg-[url('/static/bg-grafis.png')] bg-repeat-y bg-auto ">
+      <div className="w-full h-[150px] relative">
+        <div className="absolute z-[1] w-full h-full bg-black opacity-[0.6]" />
+
+        <div className="absolute z-[0] w-full h-full top-0 left-0">
+          <div className="relative w-full h-full">
+            <Image
+              src="/static/bg-image.webp"
+              alt="Jumbotron Background"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+        </div>
+
+        <div className="relative z-10 w-full max-w-[1440px] h-full mx-auto px-16">
+          <div className="w-full h-full flex items-center">
+            <div>
+              <h1 className="text-[42px] tracking-[0.5] text-white uppercase mb-[4px] font-sans cursor-pointer">
+                Blog
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="flex flex-col items-center w-full max-w-[1440px] h-full mx-auto px-16  ">
         {user.username ? (
           <Link href="/blog/create-blog">
@@ -43,7 +68,7 @@ const BlogView = () => {
             <p className="text-gray-500">Blog Kosong</p>
           </div>
         ) : (
-          <div className="grid grid-cols-3 gap-10 flex-wrap items-center justify-between mt-10">
+          <div className="grid grid-cols-3 gap-10 flex-wrap items-center justify-between py-10">
             {blogs.map((blog) => (
               <BlogCard key={blog.title} blog={blog} />
             ))}

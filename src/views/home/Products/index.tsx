@@ -21,36 +21,31 @@ const ProductHomeView = () => {
       <div className="relative z-10 w-full max-w-[1440px] h-full mx-auto px-16">
         <div className="w-full h-full flex items-center justify-center">
           <div>
-            <h2 className="text-4xl tracking-[0.5] text-white uppercase mb-12 text-center font-bold">
+            <h2 className="text-4xl tracking-[0.5] text-white uppercase mb-12 text-center font-bold font-mont">
               Products
             </h2>
 
-            <div className="grid grid-cols-3 gap-8 w-full">
+            <div className="grid grid-cols-2 gap-8 w-full">
               <Link
-                href="/about-us"
-                className="p-16 rounded-lg border border-blue-200 bg-blue-50 flex items-center"
+                href="/product/semen"
+                className="group inline-block bg-white"
               >
-                <h3 className="text-2xl font-semibold text-gray-800">
-                  Semen Kantong
-                </h3>
+                <div className="relative w-[250px] h-[300px] border-2  items-center bg-[url('/static/semen.webp')]  bg-cover bg-center">
+                  <div className="absolute w-[250px] h-[300px] bg-black opacity-0 transition-opacity duration-300 group-hover:opacity-50" />
+
+                  <p className="relative z-10 text-4xl text-white text-shadow-sm flex items-center justify-center h-full font-mont">
+                    Semen
+                  </p>
+                </div>
               </Link>
 
-              <Link
-                href="/about-us"
-                className="p-16 rounded-lg border border-blue-200 bg-blue-50 flex items-center"
-              >
-                <h3 className="text-2xl font-semibold text-gray-800">
-                  Semen Curah
-                </h3>
-              </Link>
-
-              <Link
-                href="/about-us"
-                className="p-16 rounded-lg border border-blue-200 bg-blue-50 flex items-center"
-              >
-                <h3 className="text-2xl font-semibold text-gray-800">
-                  Non Semen
-                </h3>
+              <Link href="/product/non-semen" className="group inline-block">
+                <div className="relative w-[250px] h-[300px] border-2 items-center z-0 bg-[url('/static/batu-split.webp')]  bg-cover bg-center">
+                  <div className="absolute w-[250px] h-[300px] bg-black opacity-0 transition-opacity duration-300 group-hover:opacity-50" />
+                  <p className="relative z-10 text-4xl text-white flex items-center justify-center h-full font-mont ">
+                    Non Semen
+                  </p>
+                </div>
               </Link>
             </div>
           </div>

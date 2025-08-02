@@ -24,11 +24,11 @@ const HeroSection = () => {
       <div className="relative z-10 w-full max-w-[1440px] h-full mx-auto px-16">
         <div className="w-full h-full flex items-center justify-center">
           <div>
-            <h1 className="text-[42px] tracking-[0.5] text-white uppercase mb-[4px]">
+            <h1 className="text-[42px] tracking-[0.5] text-white uppercase mb-[4px] font-mont font-medium">
               Selamat Datang di PT Semen Padang
             </h1>
 
-            <h2 className="text-xl text-white text-center mb-[40px]">
+            <h2 className="text-xl text-white text-center mb-[40px] font-mont">
               Perusahaan Semen Pertama di Asia Tenggara Sejak 1910
             </h2>
           </div>
