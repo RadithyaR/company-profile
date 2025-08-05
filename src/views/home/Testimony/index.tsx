@@ -19,7 +19,7 @@ const TestimonyView = () => {
                 >
                   <div className="flex flex-col h-[150px]">
                     <p className="text-gray-600 text-[16px] flex-grow font-mont">
-                      "{test.message}"
+                      {test.message}
                     </p>
 
                     <div className="flex justify-between">

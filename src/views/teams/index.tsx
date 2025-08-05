@@ -7,7 +7,6 @@ import Image from "next/image";
 
 export interface RandomUserResponse {
   results: UserValues[];
-  info: any;
 }
 
 const TeamsView = () => {
