@@ -60,7 +60,12 @@ const BlogView = () => {
             </button>
           </Link>
         ) : (
-          ""
+          <p className="text-sm font-mono font-medium mt-5">
+            Menambah Blog?{" "}
+            <Link href="/sign-in" className="cursor-pointer text-blue-700">
+              Log In
+            </Link>
+          </p>
         )}
 
         {blogs.length === 0 ? (
